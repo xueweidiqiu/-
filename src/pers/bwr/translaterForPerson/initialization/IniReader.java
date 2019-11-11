@@ -9,6 +9,11 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
+import pers.bwr.translaterForPerson.mode.ReadingMode;
+import pers.bwr.translaterForPerson.mode.TranslateMode;
+import pers.bwr.translaterForPerson.mode.TranslatePart;
+import pers.bwr.translaterForPerson.mode.part.WorkPart;
+
 /**
  * 配置文件阅读器，请将配置文件命名为
  * “ini.txt”,或初始化该类时将配置文件的文件全名传入
@@ -24,8 +29,9 @@ public class IniReader {
 	String iniLine;//配置文件每一行的内容
 	BufferedReader readin;//具体内容的阅读器
 	InputStream iniStream;//配置文件的输入流
-	static Map iniContents = new HashMap<Object , Object>();//要返回的值
-	String iniName = "ini.txt";
+	Map<WorkPart, Object> iniContents;//要返回的值
+	String iniName;//配置文件的名称
+	//ReadingMode readingMode;
 	
 	//不传参的默认构造方式
 	IniReader(){
@@ -33,11 +39,19 @@ public class IniReader {
 	}
 	
 	//传入配置文件名的构造方法
+	//这是构造方法，请在该方法中修改配置文件含有的项目
 	IniReader(String iniName) {
 		this.iniName = iniName;
+		iniContents = new HashMap<WorkPart , Object>();//初始化
+		
+		//readingMode = ReadingMode.ReadLineFromShortTxt;
+		//
+		iniContents.put(WorkPart.ReadingMode , ReadingMode.ReadLineFromShortTxt);
+		iniContents.put(WorkPart.TranslateMode, TranslateMode.getTranslateMode());
 	}
 	
-	public Map readIni() throws IOException {
+	//读取方法
+	public Map<WorkPart, Object> readIni() throws IOException {
 		iniStream = new FileInputStream(new File(iniName));//将配置文件包装成file类并以此类创建输入流
 		readin = new BufferedReader(new InputStreamReader(iniStream));//用阅读器包装输入流并创建缓冲区
 		//iniLine = readin.readLine();//使用缓冲阅读器的readLine方法读取其中一行的内容。
