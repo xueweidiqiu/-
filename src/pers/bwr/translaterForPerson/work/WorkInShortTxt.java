@@ -8,6 +8,7 @@ public class WorkInShortTxt implements Work{
 	public String getTranslateResult() {
 		// TODO Auto-generated method stub
 		//LineReader.readLine();
+		
 		//return Translater.translateLine();
 		return null;
 	}
