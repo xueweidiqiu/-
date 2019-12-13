@@ -3,3 +3,22 @@
 # 注释内容请用“#”开头，如以上三行的做法
 # 本文档中越靠后的内容优先级越高
 
+Reading:ReadLineFromShortTxt
+# 这一条是设置阅读需翻译内容的方法
+# 注意冒号要使用英文半角冒号，请不要随便加空格，Reading首字母大写。
+# Reading条目仅最后一条有效，即即使您写了很多行Reading的方法，也只有最后一条是有效果的。
+# 冒号后面的内容请务必原封不动地复制以下内容（请注意不要把空格复制进去）：
+# ReadLineFromShortTxt
+# 从只有一句话的txt中读取的方法,该方法只能读取txt文件的第一行
+# ReadLineFromLongTxt
+# 读取txt的多行长文本（此方法尚未实现，请勿使用）
+
+Translater:BaiduFanyi
+Translater:YoudaoFanyi
+#以上条目是关于使用哪些翻译工具的设置
+# 注意事项同Reading
+# 与Reading的不同点在于Translater可以写多行，而且多行都有效，每一行只能写一种翻译api的名字，使用时请务必原封不动地复制以下内容（请注意不要把空格复制进去）：
+# BaiduFanyi
+# 百度翻译
+# YoudaoFanyi
+# 有道翻译
