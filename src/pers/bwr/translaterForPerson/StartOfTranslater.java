@@ -15,7 +15,7 @@ public class StartOfTranslater {
 		ReadingMode test = ReadingMode.ReadLineFromShortTxt;
 		System.out.println(test.name());
 		
-		//测试从txt中读取一行的代码
+		//（测试从txt中读取一行的代码
 		try {
 			String txtLine = new ReadLineFromShortTxt().readLine("oneLine.txt");
 			System.out.println(txtLine);
@@ -23,7 +23,7 @@ public class StartOfTranslater {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		///测试从txt中读取一行的代码
+		//测试从txt中读取一行的代码）
 	}
 
 }

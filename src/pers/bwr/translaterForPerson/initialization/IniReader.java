@@ -11,7 +11,6 @@ import java.util.Map;
 
 import pers.bwr.translaterForPerson.mode.ReadingMode;
 import pers.bwr.translaterForPerson.mode.TranslateMode;
-import pers.bwr.translaterForPerson.mode.TranslatePart;
 import pers.bwr.translaterForPerson.mode.part.WorkPart;
 
 /**
@@ -29,7 +28,7 @@ public class IniReader {
 	String iniLine;//配置文件每一行的内容
 	BufferedReader readin;//具体内容的阅读器
 	InputStream iniStream;//配置文件的输入流
-	Map<WorkPart, Object> iniContents;//要返回的值
+	Map<WorkPart, Object> iniContents;//要返回的值，通过map存储配置信息
 	String iniName;//配置文件的名称
 	//ReadingMode readingMode;
 	
@@ -64,7 +63,11 @@ public class IniReader {
 			}
 			//判断读取需翻译的文本的方式
 			if(iniLine.startsWith("Reading:")){
-				//请进行编写
+				iniContents.put(WorkPart.ReadingMode, ReadingMode.valueOf(iniLine.substring(8)));
+			}
+			//判断使用的api
+			if(iniLine.startsWith("Translater:")) {
+				//请编写
 			}
 		}
 		
