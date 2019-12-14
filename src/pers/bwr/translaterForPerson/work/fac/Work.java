@@ -1,5 +1,5 @@
 package pers.bwr.translaterForPerson.work.fac;
 
 public interface Work {
-	String getTranslateResult();
+	String getTranslateResult(String readFrom);
 }

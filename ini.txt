@@ -1,7 +1,7 @@
 # 这里是配置文件
 # 每一部分的工作方式请以单独的行进行配置
 # 注释内容请用“#”开头，如以上三行的做法
-# 本文档中越靠后的内容优先级越高
+# 本文档中越靠后的内容优先级越高（特指对只能对应一条内容的属性设置多条内容时）
 
 Reading:ReadLineFromShortTxt
 # 这一条是设置阅读需翻译内容的方法
@@ -12,6 +12,12 @@ Reading:ReadLineFromShortTxt
 # 从只有一句话的txt中读取的方法,该方法只能读取txt文件的第一行
 # ReadLineFromLongTxt
 # 读取txt的多行长文本（此方法尚未实现，请勿使用）
+
+ReadingFrom:oneLine.txt
+ReadingFrom:测试.txt
+# 从哪里读取需要翻译的内容
+# 根据Reading方法的不同内容也不同，如Reading设置为ReadLineFromShortTxt，则在冒号后填入需要读取的文件名，如oneLine.txt
+# 与Reading相同，此行内容依然是如填写多条则仅最后一条有效
 
 Translater:BaiduFanyi
 Translater:YoudaoFanyi

@@ -62,7 +62,7 @@ public class IniReader {
 		iniStream = new FileInputStream(testFile);
 		*/
 		
-		readin = new BufferedReader(new InputStreamReader(iniStream));//用阅读器包装输入流并创建缓冲区
+		readin = new BufferedReader(new InputStreamReader(iniStream,"utf-8"));//用阅读器包装输入流并创建缓冲区
 		//iniLine = readin.readLine();//使用缓冲阅读器的readLine方法读取其中一行的内容。
 		
 		//按行读取配置文件
@@ -75,6 +75,10 @@ public class IniReader {
 			//判断读取需翻译的文本的方式
 			if(iniLine.startsWith("Reading:")){
 				iniContents.put(WorkPart.ReadingMode, ReadingMode.valueOf(iniLine.substring(8)));
+			}
+			//读取需翻译的文本来源
+			if(iniLine.startsWith("ReadingFrom:")) {
+				iniContents.put(WorkPart.ReadingFrom, iniLine.substring(12));
 			}
 			//判断使用的api
 			if(iniLine.startsWith("Translater:")) {

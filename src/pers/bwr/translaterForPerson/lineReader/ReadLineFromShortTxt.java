@@ -27,7 +27,7 @@ public class ReadLineFromShortTxt implements LineReader {
 	@Override
 	public String readLine(String dataName) throws IOException {
 		dataStream = new FileInputStream(new File(dataName));//将文件名包装成file类并以此类创建输入流
-		readin = new BufferedReader(new InputStreamReader(dataStream));//用阅读器包装输入流并创建缓冲区
+		readin = new BufferedReader(new InputStreamReader(dataStream,"utf-8"));//用阅读器包装输入流并创建缓冲区
 		lineContent = readin.readLine();//使用缓冲阅读器的readLine方法读取其中一行的内容。
 		return lineContent;//最终返回值
 	}
