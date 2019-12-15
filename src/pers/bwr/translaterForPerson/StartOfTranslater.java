@@ -2,9 +2,11 @@ package pers.bwr.translaterForPerson;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 import pers.bwr.translaterForPerson.initialization.IniReader;
+import pers.bwr.translaterForPerson.mode.TranslatePart;
 import pers.bwr.translaterForPerson.mode.part.WorkPart;
 import pers.bwr.translaterForPerson.work.WorkInShortTxt;
 import pers.bwr.translaterForPerson.work.fac.Work;
@@ -44,8 +46,9 @@ public class StartOfTranslater {
 		//《测试从txt中读取配置
 		
 		//测试从ShortTxt中读取
-		Work workPro = new WorkInShortTxt();
-		workPro.getTranslateResult(ini.get(WorkPart.ReadingFrom).toString());
+		@SuppressWarnings("unchecked")
+		Work workPro = new WorkInShortTxt(ini.get(WorkPart.ReadingFrom).toString() , (HashSet<TranslatePart>)ini.get(WorkPart.TranslateMode));
+		workPro.getTranslateResult();
 		
 	}
 
