@@ -21,12 +21,14 @@ public class WorkInShortTxt implements Work{
 	String txtLine = "无内容";
 	HashSet<TranslatePart> translateMode;
 	String txtName;
+	Class<Translater> translaterClass;//通过反射创建翻译对象时使用的对象
 
 	public WorkInShortTxt(String readFrom,HashSet<TranslatePart> translateMode) {
 		this.txtName = readFrom;
 		this.translateMode = translateMode;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override	
 	public String getTranslateResult() {
 		// TODO Auto-generated method stub
@@ -43,9 +45,8 @@ public class WorkInShortTxt implements Work{
 		
 		for(TranslatePart translatePart:translateMode) {
 			try {
-				@SuppressWarnings("unchecked")
-				Class<Translater> translater = (Class<Translater>) Class.forName("pers.bwr.translaterForPerson.translater." + translatePart.toString());
-				System.out.println(translater);
+				this.translaterClass = (Class<Translater>) Class.forName("pers.bwr.translaterForPerson.translater." + translatePart.toString());
+				System.out.println(translaterClass);
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
