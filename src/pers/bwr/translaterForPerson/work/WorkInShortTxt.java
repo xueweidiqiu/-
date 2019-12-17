@@ -1,6 +1,7 @@
 package pers.bwr.translaterForPerson.work;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 
 import pers.bwr.translaterForPerson.lineReader.ReadLineFromShortTxt;
@@ -22,6 +23,7 @@ public class WorkInShortTxt implements Work{
 	HashSet<TranslatePart> translateMode;
 	String txtName;
 	Class<Translater> translaterClass;//通过反射创建翻译对象时使用的对象
+	String translateResult = "";
 
 	public WorkInShortTxt(String readFrom,HashSet<TranslatePart> translateMode) {
 		this.txtName = readFrom;
@@ -46,13 +48,14 @@ public class WorkInShortTxt implements Work{
 		for(TranslatePart translatePart:translateMode) {
 			try {
 				this.translaterClass = (Class<Translater>) Class.forName("pers.bwr.translaterForPerson.translater." + translatePart.toString());
-				System.out.println(translaterClass);
-			} catch (ClassNotFoundException e) {
+				translateResult += translaterClass.getDeclaredConstructor().newInstance().translateLine(txtLine) + "\n";
+			} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | IllegalArgumentException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		
+		System.out.println(translateResult);
 		//return Translater.translateLine();
 		return null;
 	}
