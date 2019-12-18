@@ -17,5 +17,6 @@ public class BaiduFanyi implements Translater {
 		// TODO Auto-generated method stub
 		return "∞Ÿ∂»∑≠“Î";
 	}
+	
 
 }

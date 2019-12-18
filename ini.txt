@@ -21,6 +21,7 @@ ReadingFrom:测试.txt
 
 Translater:BaiduFanyi
 Translater:YoudaoFanyi
+Translater:GoogleTranslate
 #以上条目是关于使用哪些翻译工具的设置
 # 注意事项同Reading
 # 与Reading的不同点在于Translater可以写多行，而且多行都有效，每一行只能写一种翻译api的名字，使用时请务必原封不动地复制以下内容（请注意不要把空格复制进去）：
@@ -28,3 +29,5 @@ Translater:YoudaoFanyi
 # 百度翻译
 # YoudaoFanyi
 # 有道翻译
+# GoogleTranslate
+# 谷歌翻译

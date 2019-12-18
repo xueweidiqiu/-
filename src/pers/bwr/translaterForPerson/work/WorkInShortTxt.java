@@ -48,7 +48,7 @@ public class WorkInShortTxt implements Work{
 		for(TranslatePart translatePart:translateMode) {
 			try {
 				this.translaterClass = (Class<Translater>) Class.forName("pers.bwr.translaterForPerson.translater." + translatePart.toString());
-				translateResult += translaterClass.getDeclaredConstructor().newInstance().translateLine(txtLine) + "\n";
+				translateResult += translaterClass.getDeclaredConstructor().newInstance().translaterName() + "£º" + translaterClass.getDeclaredConstructor().newInstance().translateLine(txtLine) + "\n";
 			} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | IllegalArgumentException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
