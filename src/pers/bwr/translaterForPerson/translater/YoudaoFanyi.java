@@ -1,6 +1,7 @@
 package pers.bwr.translaterForPerson.translater;
 
 import pers.bwr.translaterForPerson.translater.fat.Translater;
+import youdao.YouDao;
 
 public class YoudaoFanyi implements Translater {
 
@@ -8,7 +9,14 @@ public class YoudaoFanyi implements Translater {
 	public String translateLine(String translateThem) {
 		// TODO Auto-generated method stub
 		//使用有道翻译
-		return "使用有道翻译翻译了\"" + translateThem + "\"";
+		try {
+			return YouDao.youdaoFanyi(translateThem);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return "翻译出错。";
 	}
 
 	@Override

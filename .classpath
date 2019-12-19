@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/jna-4.1.0.jar"/>
 	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/jna-platform-4.1.0.jar"/>
 	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/baidufanyi.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/youdaofanyi.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
