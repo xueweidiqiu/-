@@ -48,7 +48,7 @@ public class StartOfTranslater {
 		//≤‚ ‘¥”ShortTxt÷–∂¡»°
 		@SuppressWarnings("unchecked")
 		Work workPro = new WorkInShortTxt(ini.get(WorkPart.ReadingFrom).toString() , (HashSet<TranslatePart>)ini.get(WorkPart.TranslateMode));
-		workPro.getTranslateResult();
+		System.out.println(workPro.getWorkResult());
 		
 	}
 
