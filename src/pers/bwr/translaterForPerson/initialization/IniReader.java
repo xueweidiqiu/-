@@ -13,6 +13,7 @@ import java.util.Map;
 import pers.bwr.translaterForPerson.mode.ReadingMode;
 import pers.bwr.translaterForPerson.mode.TranslateMode;
 import pers.bwr.translaterForPerson.mode.TranslatePart;
+import pers.bwr.translaterForPerson.mode.WritingMode;
 import pers.bwr.translaterForPerson.mode.part.WorkPart;
 
 /**
@@ -89,6 +90,14 @@ public class IniReader {
 				TranslateMode.addTranslateMode(TranslatePart.BaiduFanyi);
 				*/
 				TranslateMode.addTranslateMode(TranslatePart.valueOf(iniLine.substring(11)));
+			}
+			//判断写入方式
+			if(iniLine.startsWith("Writing:")) {
+				iniContents.put(WorkPart.WritingMode, WritingMode.valueOf(iniLine.substring(8)));
+			}
+			//读取要写入的文件名
+			if(iniLine.startsWith("WritingTo:")) {
+				iniContents.put(WorkPart.WritingTo, iniLine.substring(10));
 			}
 		}
 		

@@ -1,15 +1,14 @@
 package pers.bwr.translaterForPerson.work;
 
-import java.io.IOException;
 import java.util.HashSet;
 
-import pers.bwr.translaterForPerson.lineReader.ReadLineFromShortTxt;
 import pers.bwr.translaterForPerson.mode.TranslatePart;
 import pers.bwr.translaterForPerson.translater.fat.Translater;
 import pers.bwr.translaterForPerson.work.fac.Work;
 import pers.bwr.translaterForPerson.work.getContent.GetFromTxt;
 import pers.bwr.translaterForPerson.work.translate.TranslateOneLine;
 import pers.bwr.translaterForPerson.work.translate.fac.Translate;
+import pers.bwr.translaterForPerson.work.writeOut.WriteToTxt;
 
 /**
  * 此类是只翻译txt中第一行内容的简单流程方法类
@@ -28,11 +27,12 @@ public class WorkInShortTxt implements Work {
 	Class<Translater> translaterClass;//通过反射创建翻译对象时使用的对象
 	String translateResult = "";
 	Translate translate;
+	String writeTo;//翻译结果要写入的文件名
 
-	public WorkInShortTxt(String readFrom,HashSet<TranslatePart> translateMode) {
+	public WorkInShortTxt(String readFrom,HashSet<TranslatePart> translateMode,String writeTo) {
 		//this.txtName = readFrom;
 		this.translateMode = translateMode;
-	
+		this.writeTo = writeTo;
 	
 		txtLine = new GetFromTxt(readFrom).getResult();
 		
@@ -44,6 +44,8 @@ public class WorkInShortTxt implements Work {
 	
 	@Override
 	public String getWorkResult() {
+		new WriteToTxt(translateResult , writeTo);
+		
 		//当前的处理方式是将结果交给上层处理，请尽快编写写入文件的方法
 		return translateResult;
 	}

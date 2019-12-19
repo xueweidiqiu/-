@@ -47,8 +47,10 @@ public class StartOfTranslater {
 		
 		//测试从ShortTxt中读取
 		@SuppressWarnings("unchecked")
-		Work workPro = new WorkInShortTxt(ini.get(WorkPart.ReadingFrom).toString() , (HashSet<TranslatePart>)ini.get(WorkPart.TranslateMode));
-		System.out.println(workPro.getWorkResult());
+		Work workPro = new WorkInShortTxt(ini.get(WorkPart.ReadingFrom).toString() , (HashSet<TranslatePart>)ini.get(WorkPart.TranslateMode) , ini.get(WorkPart.WritingTo).toString());
+		//System.out.println(workPro.getWorkResult());
+		workPro.getWorkResult();
+		System.out.println("程序执行结束，任务已完成。");
 		
 	}
 

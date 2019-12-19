@@ -16,6 +16,9 @@ public class GoogleTranslate implements Translater {
 	@Override
 	public String translateLine(String translateThem) {
 		/*
+		 * 非本人代码
+		 */
+		/*
 		*第一种方式post请求
 		*/
 		String jsonResult = "";

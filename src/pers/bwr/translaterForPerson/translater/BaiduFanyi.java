@@ -23,6 +23,9 @@ public class BaiduFanyi implements Translater {
 	@Override
 	public String translateLine(String translateThem) {
 		
+		/*
+		 * 非本人代码
+		 */
 	    TransApi api = new TransApi(APP_ID, SECURITY_KEY);
 	    String query = translateThem;
 	    String trans_result = api.getTransResult(query, "auto", "auto");

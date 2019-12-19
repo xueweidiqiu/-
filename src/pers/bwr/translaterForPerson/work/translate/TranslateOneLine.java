@@ -25,6 +25,7 @@ public class TranslateOneLine implements Translate {
 	public TranslateOneLine(String txtLine , HashSet<TranslatePart> translateMode) {
 		this.txtLine = txtLine;
 		this.translateMode = translateMode;
+		translateResult += "Ô­ÎÄ£º" + txtLine + "\n";
 	}
 	
 

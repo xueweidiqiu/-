@@ -31,3 +31,13 @@ Translater:GoogleTranslate
 # 有道翻译
 # GoogleTranslate
 # 谷歌翻译
+
+Writing:ToTxt
+# 写入方法
+# 注意事项同读取方法
+# ToTxt
+# 写入到txt文件中
+
+WritingTo:The_result.txt
+WritingTo:翻译结果.txt
+# 要写入的文件名，注意事项同读取的方法
