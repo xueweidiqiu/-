@@ -25,7 +25,7 @@ public class GoogleTranslate implements Translater {
 		jsons.put("key","value");
 		translateThem = translateThem.replace(" ", "%20");
 		try {
-		            URL url = new URL("http://translate.google.cn/translate_a/single?client=gtx&dt=t&dj=1&ie=UTF-8&sl=auto&tl=zh_TW&q=" + translateThem);
+		            URL url = new URL("http://translate.google.cn/translate_a/single?client=gtx&dt=t&dj=1&ie=UTF-8&sl=auto&tl=zh_CN&q=" + translateThem);
 		            //打开和url之间的连接
 		            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		            PrintWriter out = null;

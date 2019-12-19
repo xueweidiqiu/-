@@ -4,5 +4,16 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/fastjson-1.2.2.jar"/>
 	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/fastjson-1.2.2-sources.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/fluent-hc-4.5.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/httpclient-4.5.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/httpclient-cache-4.5.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/httpclient-win-4.5.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/httpcore-4.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/httpmime-4.5.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/programming/project/多源翻译工具/jar/baidufanyi.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
