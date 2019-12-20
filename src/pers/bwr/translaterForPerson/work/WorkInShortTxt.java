@@ -5,7 +5,7 @@ import java.util.HashSet;
 import pers.bwr.translaterForPerson.mode.TranslatePart;
 import pers.bwr.translaterForPerson.translater.fat.Translater;
 import pers.bwr.translaterForPerson.work.fac.Work;
-import pers.bwr.translaterForPerson.work.getContent.GetFromTxt;
+import pers.bwr.translaterForPerson.work.getContent.GetOneLineFromTxt;
 import pers.bwr.translaterForPerson.work.translate.TranslateOneLine;
 import pers.bwr.translaterForPerson.work.translate.fac.Translate;
 import pers.bwr.translaterForPerson.work.writeOut.WriteToTxt;
@@ -26,7 +26,7 @@ public class WorkInShortTxt implements Work {
 	//String txtName;
 	Class<Translater> translaterClass;//通过反射创建翻译对象时使用的对象
 	String translateResult = "";
-	Translate translate;
+	Translate translate;//调用翻译类的对象
 	String writeTo;//翻译结果要写入的文件名
 
 	public WorkInShortTxt(String readFrom,HashSet<TranslatePart> translateMode,String writeTo) {
@@ -34,7 +34,7 @@ public class WorkInShortTxt implements Work {
 		this.translateMode = translateMode;
 		this.writeTo = writeTo;
 	
-		txtLine = new GetFromTxt(readFrom).getResult();
+		txtLine = new GetOneLineFromTxt(readFrom).getResult();
 		
 		translate = new TranslateOneLine(txtLine,translateMode);
 		translateResult += translate.getTranslateResult();

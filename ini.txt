@@ -3,7 +3,10 @@
 # 注释内容请用“#”开头，如以上三行的做法
 # 本文档中越靠后的内容优先级越高（特指对只能对应一条内容的属性设置多条内容时）
 
-Reading:ReadLineFromShortTxt
+# 主义，截至目前（下午 7:56 2019/12/19），有效的设置只有ReadingFrom、TranslateMode、WritingTo的设置是有效的，且ReadingFrom和WritingTo都不能修改，只有TranslateMode可以修改
+# 另外，如果写入文件时同名文件已存在，则原文件可能会被覆盖，请一定注意，使用程序前要小心谨慎！
+
+Reading:ReadLineFromLongTxt
 # 这一条是设置阅读需翻译内容的方法
 # 注意冒号要使用英文半角冒号，请不要随便加空格，Reading首字母大写。
 # Reading条目仅最后一条有效，即即使您写了很多行Reading的方法，也只有最后一条是有效果的。

@@ -21,7 +21,7 @@ public class GoogleTranslate implements Translater {
 		/*
 		*第一种方式post请求
 		*/
-		String jsonResult = "";
+		String jsonResult = this.translaterName() + "翻译出错";
 		
 		JSONObject result = new JSONObject();
 		JSONObject jsons = new JSONObject();

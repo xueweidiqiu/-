@@ -18,6 +18,13 @@ import pers.bwr.translaterForPerson.lineReader.fac.LineReader;
  *
  */
 
+/**
+ * 目前只有
+ * pers.bwr.translaterForPerson.work.getContent.GetOneLineFromTxt类
+ * 调用了此方法，因此此方法可能在后期优化时进行整合删除
+ * @author v592128947
+ *
+ */
 public class ReadLineFromShortTxt implements LineReader {
 	//String dataName;//传入的文件名
 	String lineContent;//要读取的文件内容

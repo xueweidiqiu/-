@@ -21,11 +21,12 @@ public class TranslateOneLine implements Translate {
 	String txtName;
 	Class<Translater> translaterClass;//通过反射创建翻译对象时使用的对象
 	String translateResult = "";
+	Translater translater;
 	
 	public TranslateOneLine(String txtLine , HashSet<TranslatePart> translateMode) {
 		this.txtLine = txtLine;
 		this.translateMode = translateMode;
-		translateResult += "原文：" + txtLine + "\n";
+		translateResult = "原文：" + txtLine + "\n";
 	}
 	
 
@@ -37,7 +38,8 @@ public class TranslateOneLine implements Translate {
 		for(TranslatePart translatePart:translateMode) {
 			try {
 				this.translaterClass = (Class<Translater>) Class.forName("pers.bwr.translaterForPerson.translater." + translatePart.toString());
-				translateResult += translaterClass.getDeclaredConstructor().newInstance().translaterName() + "：" + translaterClass.getDeclaredConstructor().newInstance().translateLine(txtLine) + "\n";
+				translater = translaterClass.getDeclaredConstructor().newInstance();
+				translateResult += translater.translaterName() + "：" + translater.translateLine(txtLine) + "\n";
 			} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | IllegalArgumentException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

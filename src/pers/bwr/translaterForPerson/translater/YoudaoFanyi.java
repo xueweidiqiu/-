@@ -16,7 +16,7 @@ public class YoudaoFanyi implements Translater {
 			e.printStackTrace();
 		}
 		
-		return "·­Òë³ö´í¡£";
+		return this.translaterName() + "·­Òë³ö´í¡£";
 	}
 
 	@Override

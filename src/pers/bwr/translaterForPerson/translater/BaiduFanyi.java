@@ -32,8 +32,13 @@ public class BaiduFanyi implements Translater {
 	    
 	    com.alibaba.fastjson.JSONObject jsonss = null;
         jsonss =com.alibaba.fastjson.JSONObject.parseObject(trans_result);
-	    
-	    String result = jsonss.getJSONArray("trans_result").getJSONObject(0).getString("dst");
+	    String result = this.translaterName() + "·­Òë³ö´í¡£";
+        
+        try {
+        	result = jsonss.getJSONArray("trans_result").getJSONObject(0).getString("dst");
+        }catch(Exception e) {
+        	e.printStackTrace();
+        }
 	    
 		//System.err.println(result);
 		//return null;
