@@ -10,6 +10,7 @@ import pers.bwr.translaterForPerson.mode.ReadingMode;
 import pers.bwr.translaterForPerson.mode.TranslatePart;
 import pers.bwr.translaterForPerson.mode.part.WorkPart;
 import pers.bwr.translaterForPerson.work.WorkInLongTxt;
+import pers.bwr.translaterForPerson.work.WorkInLongTxtWithRandom;
 import pers.bwr.translaterForPerson.work.WorkInShortTxt;
 import pers.bwr.translaterForPerson.work.fac.Work;
 
@@ -55,7 +56,13 @@ public class StartOfTranslater {
 			workPro.getWorkResult();
 		}
 		if(ini.get(WorkPart.ReadingMode) == ReadingMode.ReadLineFromLongTxt) {
+			@SuppressWarnings("unchecked")
 			Work workPro = new WorkInLongTxt(ini.get(WorkPart.ReadingFrom).toString() , (HashSet<TranslatePart>)ini.get(WorkPart.TranslateMode) , ini.get(WorkPart.WritingTo).toString());
+			workPro.getWorkResult();
+		}
+		if(ini.get(WorkPart.ReadingMode) == ReadingMode.ReadLongTxtWithRandom) {
+			@SuppressWarnings("unchecked")
+			Work workPro = new WorkInLongTxtWithRandom(ini.get(WorkPart.ReadingFrom).toString() , (HashSet<TranslatePart>)ini.get(WorkPart.TranslateMode) , ini.get(WorkPart.WritingTo).toString());
 			workPro.getWorkResult();
 		}
 		

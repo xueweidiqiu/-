@@ -6,7 +6,7 @@
 # 主义，截至目前（下午 7:56 2019/12/19），有效的设置只有ReadingFrom、TranslateMode、WritingTo的设置是有效的，且ReadingFrom和WritingTo都不能修改，只有TranslateMode可以修改
 # 另外，如果写入文件时同名文件已存在，则原文件可能会被覆盖，请一定注意，使用程序前要小心谨慎！
 
-Reading:ReadLineFromLongTxt
+Reading:ReadLongTxtWithRandom
 # 这一条是设置阅读需翻译内容的方法
 # 注意冒号要使用英文半角冒号，请不要随便加空格，Reading首字母大写。
 # Reading条目仅最后一条有效，即即使您写了很多行Reading的方法，也只有最后一条是有效果的。
@@ -14,26 +14,27 @@ Reading:ReadLineFromLongTxt
 # ReadLineFromShortTxt
 # 从只有一句话的txt中读取的方法,该方法只能读取txt文件的第一行
 # ReadLineFromLongTxt
-# 读取txt的多行长文本（此方法尚未实现，请勿使用）
+# 读取txt的多行长文本，请注意，此方法可能会被封ip！！！！建议使用时每次翻译不要超过30句，一小时不要超过200句，避免ip被封，另外此方法是翻译结束一次性写入文件的，中途暂停的话结果会丢失，请控制好每次翻译的内容量。
+# ReadLongTxtWithRandom
+# 由ReadLineFromLongTxt方法修改而成，加入了1到2秒的随机延时，（玄学意义上）可以减少ip被封的概率，请谨慎使用。
 
-ReadingFrom:oneLine.txt
-ReadingFrom:测试.txt
+ReadingFrom:要翻译的内容.txt
 # 从哪里读取需要翻译的内容
 # 根据Reading方法的不同内容也不同，如Reading设置为ReadLineFromShortTxt，则在冒号后填入需要读取的文件名，如oneLine.txt
 # 与Reading相同，此行内容依然是如填写多条则仅最后一条有效
 
 Translater:BaiduFanyi
 Translater:YoudaoFanyi
-Translater:GoogleTranslate
+# Translater:GoogleTranslate
 #以上条目是关于使用哪些翻译工具的设置
 # 注意事项同Reading
 # 与Reading的不同点在于Translater可以写多行，而且多行都有效，每一行只能写一种翻译api的名字，使用时请务必原封不动地复制以下内容（请注意不要把空格复制进去）：
 # BaiduFanyi
-# 百度翻译
+# 百度翻译，我使用的是我自己的个人开发者id请求的api，请不要乱用导致我被封号QAQ
 # YoudaoFanyi
-# 有道翻译
+# 有道翻译，重新包装的web api，快速翻译大量文本有被暂封ip的风险
 # GoogleTranslate
-# 谷歌翻译
+# 谷歌翻译，重新包装的web api，快速翻译大量文本有被暂封ip的风险
 
 Writing:ToTxt
 # 写入方法
