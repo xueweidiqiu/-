@@ -1,6 +1,5 @@
 package pers.bwr.translaterForPerson.work;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 

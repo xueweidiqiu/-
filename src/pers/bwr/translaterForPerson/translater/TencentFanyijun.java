@@ -14,7 +14,7 @@ public class TencentFanyijun implements Translater {
 		result = this.translaterName() + "·­Òë³ö´í¡£";
 		
 		JSONObject jsonPar = new JSONObject();
-		jsonPar = jsonPar.parseObject(TextTranslate.translate(translateThem) );
+		jsonPar = JSONObject.parseObject(TextTranslate.translate(translateThem) );
 		result = jsonPar.getString("TargetText");
 		return result;
 	}

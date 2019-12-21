@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+import pers.bwr.translaterForPerson.GUI.Progress;
 import pers.bwr.translaterForPerson.initialization.IniReader;
 import pers.bwr.translaterForPerson.mode.ReadingMode;
 import pers.bwr.translaterForPerson.mode.TranslatePart;
@@ -36,6 +37,8 @@ public class StartOfTranslater {
 		}
 		//测试从txt中读取一行的代码）*/
 		
+		new Progress();
+		@SuppressWarnings("rawtypes")
 		Map ini = new HashMap();
 		
 		//》测试从txt中读取配置
@@ -66,7 +69,7 @@ public class StartOfTranslater {
 			workPro.getWorkResult();
 		}
 		
-		System.out.println("程序执行结束，任务已完成。");
+		System.out.println("程序执行结束，任务已完成。请关闭程序。");
 		
 	}
 
