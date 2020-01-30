@@ -25,8 +25,8 @@ ReadingFrom:要翻译的内容.txt
 # 与Reading相同，此行内容依然是如填写多条则仅最后一条有效
 
 Translater:BaiduFanyi
-Translater:YoudaoFanyi
-Translater:GoogleTranslate
+#Translater:YoudaoFanyi
+#Translater:GoogleTranslate
 Translater:YoudaoFanyi2
 Translater:TencentFanyijun
 #以上条目是关于使用哪些翻译工具的设置
@@ -52,3 +52,6 @@ Writing:ToTxt
 WritingTo:The_result.txt
 WritingTo:翻译结果.txt
 # 要写入的文件名，注意事项同读取的方法
+
+ReadingFrom:6.txt
+WritingTo:翻译结果6.txt

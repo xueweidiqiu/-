@@ -18,6 +18,7 @@ import pers.bwr.translaterForPerson.work.fac.Work;
 public class StartOfTranslater {
 
 	public static void main(String[] args) {
+		try {
 		//正式代码
 		
 		//测试用代码
@@ -37,7 +38,7 @@ public class StartOfTranslater {
 		}
 		//测试从txt中读取一行的代码）*/
 		
-		new Progress();
+		//new Progress();
 		@SuppressWarnings("rawtypes")
 		Map ini = new HashMap();
 		
@@ -71,6 +72,9 @@ public class StartOfTranslater {
 		
 		System.out.println("程序执行结束，任务已完成。请关闭程序。");
 		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
